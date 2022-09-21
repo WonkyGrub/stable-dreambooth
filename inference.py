@@ -9,7 +9,7 @@ def parse_args():
     parser.add_argument("--prompt", required=True)
     parser.add_argument("--checkpoint_dir", required=True)
     parser.add_argument("--save_dir", default="outputs")
-    parser.add_argument("--sample_nums", default=16)
+    parser.add_argument("--sample_nums", default=6)
     parser.add_argument("-gs", "--guidance_scale", type=float, default=7.5)
     return parser.parse_args()
 
