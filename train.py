@@ -19,14 +19,14 @@ from pathlib import Path
 @dataclass
 class TrainingConfig:
     # Task specific parameters
-    instance_prompt: str = "[V] dog"
-    class_prompt: str = "a dog"
-    evaluate_prompt = ["a [V] dog"] * 2 + ["a [V] dog in a doghouse"] * 2 + ["a [V] dog in a bucket"] * 2 + ["a sleeping [V] dog"]*1
-    data_path: str = "./data/dogs"
+    instance_prompt: str = "a [V] person"
+    class_prompt: str = "male face picture"
+    evaluate_prompt = ["photo of a [V] person"] * 1 + ["photo of a [V] person wearing a hat"] * 1 + ["photo of a [V] person with glasses"] * 1 + ["photo of a [V] person with short hair"]*1  
+    data_path: str = "./data/chris"
     identifier: str = "sks"
 
     # Basic Training Parameters
-    num_epochs: int = 8
+    num_epochs: int = 4
     train_batch_size: int = 2
     learning_rate: float = 1e-5
     image_size: int = 512 # the generated image resolution
@@ -35,13 +35,13 @@ class TrainingConfig:
     # Hyperparmeter for diffusion models
     num_train_timesteps: int = 1000
     train_guidance_scale: float = 1 # guidance scale at training
-    sample_guidance_scale: float = 7.5 # guidance scale at inference
+    sample_guidance_scale: float = 9 # guidance scale at inference
 
     # Practical Training Settings
     mixed_precision: str = 'fp16'  # `no` for float32, `fp16` for automatic mixed precision
     save_image_epochs: int = 1
     save_model_epochs: int = 1
-    output_dir: str = 'logs/dog_finetune'
+    output_dir: str = 'logs/chris_finetune'
     overwrite_output_dir: bool = True  # overwrite the old model when re-running the notebook
     seed: int = 42
 

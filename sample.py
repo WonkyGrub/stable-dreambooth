@@ -3,8 +3,8 @@ import torch
 
 sample_nums = 100
 batch_size = 1
-prompt = "a photo of dog"
-save_dir = "data/dogs/class"
+prompt = "male face picture"
+save_dir = "data/chris/class"
 
 
 if __name__ == "__main__":

@@ -10,7 +10,7 @@ def parse_args():
     parser.add_argument("--checkpoint_dir", required=True)
     parser.add_argument("--save_dir", default="outputs")
     parser.add_argument("--sample_nums", default=6)
-    parser.add_argument("-gs", "--guidance_scale", type=float, default=7.5)
+    parser.add_argument("-gs", "--guidance_scale", type=float, default=9)
     return parser.parse_args()
 
 if __name__ == "__main__":
@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     with torch.no_grad():
         with torch.autocast("cuda"):
-            images = model([args.prompt] * args.sample_nums, height=512, width=512, guidance_scale=args.guidance_scale, num_inference_steps=50)["sample"]
+            images = model([args.prompt] * args.sample_nums, height=512, width=512, guidance_scale=args.guidance_scale, num_inference_steps=150)["sample"]
     
     save_dir = Path(args.save_dir)
     save_dir.mkdir(parents=True, exist_ok=True)
