@@ -1,8 +1,8 @@
 from diffusers.pipelines import StableDiffusionPipeline
 import torch
 
-sample_nums = 1000
-batch_size = 16
+sample_nums = 100
+batch_size = 1
 prompt = "a photo of dog"
 save_dir = "data/dogs/class"
 
