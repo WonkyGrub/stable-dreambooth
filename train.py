@@ -19,15 +19,15 @@ from pathlib import Path
 @dataclass
 class TrainingConfig:
     # Task specific parameters
-    instance_prompt: str = "photo of a [V] dog"
-    class_prompt: str = "photo of a dog"
-    evaluate_prompt = ["photo of a [V] dog"] * 4 + ["photo of a [V] dog in a doghouse"] * 4 + ["photo of a [V] dog in a bucket"] * 4 + ["photo of a sleeping [V] dog"]*4
+    instance_prompt: str = "[V] dog"
+    class_prompt: str = "a dog"
+    evaluate_prompt = ["a [V] dog"] * 2 + ["a [V] dog in a doghouse"] * 2 + ["a [V] dog in a bucket"] * 2 + ["a sleeping [V] dog"]*1
     data_path: str = "./data/dogs"
     identifier: str = "sks"
 
     # Basic Training Parameters
-    num_epochs: int = 1
-    train_batch_size: int = 4
+    num_epochs: int = 8
+    train_batch_size: int = 2
     learning_rate: float = 1e-5
     image_size: int = 512 # the generated image resolution
     gradient_accumulation_steps: int = 1
