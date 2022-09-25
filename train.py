@@ -22,7 +22,7 @@ class TrainingConfig:
     instance_prompt: str = "fanart of a [V] bullywug"
     class_prompt: str = "fanart of a bullywug"
     evaluate_prompt = ["fanart of a [V] bullywug"] * 1 + ["concept art of [V] bullywug by Ruan Jia"] * 1 + ["fanart of a [V] bullywug with glasses"] * 1 + ["hyperrealistic photo of a [V] bullywug with short hair"]*1  
-    data_path: str = "./data/wonky"
+    data_path: str = "./data/sol"
     identifier: str = ",,q"
 
     # Basic Training Parameters
