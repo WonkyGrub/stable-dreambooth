@@ -33,7 +33,7 @@ class TrainingConfig:
     gradient_accumulation_steps: int = 1
 
     # Hyperparmeter for diffusion models
-    num_train_timesteps: int = 2000
+    num_train_timesteps: int = 1000
     train_guidance_scale: float = 1 # guidance scale at training
     sample_guidance_scale: float = 7.5 # guidance scale at inference
 
