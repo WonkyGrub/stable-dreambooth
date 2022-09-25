@@ -1,10 +1,10 @@
 from diffusers.pipelines import StableDiffusionPipeline
 import torch
 
-sample_nums = 100
-batch_size = 1
-prompt = "male face picture"
-save_dir = "data/chris/class"
+sample_nums = 1000
+batch_size = 4
+prompt = "fanart of a bullywug"
+save_dir = "data/sol/class"
 
 
 if __name__ == "__main__":
