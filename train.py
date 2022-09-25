@@ -19,23 +19,23 @@ from pathlib import Path
 @dataclass
 class TrainingConfig:
     # Task specific parameters
-    instance_prompt: str = "a [V] person"
-    class_prompt: str = "male face picture"
-    evaluate_prompt = ["photo of a [V] person"] * 1 + ["photo of a [V] person wearing a hat"] * 1 + ["photo of a [V] person with glasses"] * 1 + ["photo of a [V] person with short hair"]*1  
-    data_path: str = "./data/chris"
-    identifier: str = "sks"
+    instance_prompt: str = "fanart of a [V] bullywug"
+    class_prompt: str = "fanart of a bullywug"
+    evaluate_prompt = ["fanart of a [V] bullywug"] * 1 + ["concept art of [V] bullywug by Ruan Jia"] * 1 + ["fanart of a [V] bullywug with glasses"] * 1 + ["hyperrealistic photo of a [V] bullywug with short hair"]*1  
+    data_path: str = "./data/wonky"
+    identifier: str = ",,q"
 
     # Basic Training Parameters
     num_epochs: int = 4
     train_batch_size: int = 2
-    learning_rate: float = 1e-5
+    learning_rate: float = 2e-6
     image_size: int = 512 # the generated image resolution
     gradient_accumulation_steps: int = 1
 
     # Hyperparmeter for diffusion models
-    num_train_timesteps: int = 1000
+    num_train_timesteps: int = 2000
     train_guidance_scale: float = 1 # guidance scale at training
-    sample_guidance_scale: float = 9 # guidance scale at inference
+    sample_guidance_scale: float = 7.5 # guidance scale at inference
 
     # Practical Training Settings
     mixed_precision: str = 'fp16'  # `no` for float32, `fp16` for automatic mixed precision
