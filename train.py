@@ -41,7 +41,7 @@ class TrainingConfig:
     mixed_precision: str = 'fp16'  # `no` for float32, `fp16` for automatic mixed precision
     save_image_epochs: int = 1
     save_model_epochs: int = 1
-    output_dir: str = 'logs/chris_finetune'
+    output_dir: str = 'logs/sol_finetune'
     overwrite_output_dir: bool = True  # overwrite the old model when re-running the notebook
     seed: int = 42
 
