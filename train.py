@@ -19,10 +19,10 @@ from pathlib import Path
 @dataclass
 class TrainingConfig:
     # Task specific parameters
-    instance_prompt: str = "a photo of a [V] man"
-    class_prompt: str = "a photo of a man"
-    evaluate_prompt = ["a photo of a man"] * 4 + ["a photo of a [V] man"] * 1 + ["margot robbie"] * 1 + ["concept art of a [V] man by carne griffiths"] * 2
-    data_path: str = "./data/joetest"
+    instance_prompt: str = "fanart of a [V] bullywug"
+    class_prompt: str = "fanart of a bullywug"
+    evaluate_prompt = ["fanart of a bullywug"] * 4 + ["fanart of a [V] bullywug"] * 1 + ["margot robbie"] * 1 + ["the art of Craig Mullins - concept art of a [V] bullywug by Ruan Jia Featured on ArtStation] * 2
+    data_path: str = "./data/sol"
     identifier: str = "ëª"
 
     # Basic Training Parameters
@@ -41,7 +41,7 @@ class TrainingConfig:
     mixed_precision: str = 'fp16'  # `no` for float32, `fp16` for automatic mixed precision
     save_image_epochs: int = 1
     save_model_epochs: int = 1
-    output_dir: str = 'logs/coltontest6'
+    output_dir: str = 'logs/soltest1'
     overwrite_output_dir: bool = True  # overwrite the old model when re-running the notebook
     seed: int = 42
 
