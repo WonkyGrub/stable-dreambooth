@@ -19,29 +19,29 @@ from pathlib import Path
 @dataclass
 class TrainingConfig:
     # Task specific parameters
-    instance_prompt: str = "fanart of a [V] bullywug"
-    class_prompt: str = "fanart of a bullywug"
-    evaluate_prompt = ["fanart of a [V] bullywug"] * 1 + ["concept art of [V] bullywug by Ruan Jia"] * 1 + ["fanart of a [V] bullywug with glasses"] * 1 + ["hyperrealistic photo of a [V] bullywug with short hair"]*1  
-    data_path: str = "./data/sol"
-    identifier: str = ",,q"
+    instance_prompt: str = "a photo of a [V] man"
+    class_prompt: str = "a photo of a man"
+    evaluate_prompt = ["a photo of a man"] * 4 + ["a photo of a [V] man"] * 1 + ["margot robbie"] * 1 + ["concept art of a [V] man by carne griffiths"] * 2
+    data_path: str = "./data/joetest"
+    identifier: str = "ëª"
 
     # Basic Training Parameters
-    num_epochs: int = 4
-    train_batch_size: int = 2
-    learning_rate: float = 2e-6
+    num_epochs: int = 9
+    train_batch_size: int = 1
+    learning_rate: float = 4e-6
     image_size: int = 512 # the generated image resolution
     gradient_accumulation_steps: int = 1
 
     # Hyperparmeter for diffusion models
-    num_train_timesteps: int = 1000
-    train_guidance_scale: float = 1 # guidance scale at training
-    sample_guidance_scale: float = 7.5 # guidance scale at inference
+    num_train_timesteps: int = 9000
+    train_guidance_scale: float = 0 # guidance scale at training
+    sample_guidance_scale: float = 6.5 # guidance scale at inference
 
     # Practical Training Settings
     mixed_precision: str = 'fp16'  # `no` for float32, `fp16` for automatic mixed precision
     save_image_epochs: int = 1
     save_model_epochs: int = 1
-    output_dir: str = 'logs/sol_finetune'
+    output_dir: str = 'logs/coltontest6'
     overwrite_output_dir: bool = True  # overwrite the old model when re-running the notebook
     seed: int = 42
 

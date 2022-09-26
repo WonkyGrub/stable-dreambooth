@@ -1,10 +1,10 @@
 from diffusers.pipelines import StableDiffusionPipeline
 import torch
 
-sample_nums = 1000
-batch_size = 4
-prompt = "fanart of a bullywug"
-save_dir = "data/sol/class"
+sample_nums = 200
+batch_size = 10
+prompt = "a photo of a man"
+save_dir = "data/joetest/class"
 
 
 if __name__ == "__main__":
@@ -18,7 +18,9 @@ if __name__ == "__main__":
 
     for text in datasets:
         with torch.no_grad():
-            images = model(text, height=512, width=512, num_inference_steps=50)["sample"]
+            with torch.autocast("cuda"):
+                generator = torch.Generator("cuda").manual_seed(id)
+                images = model(text, height=512, width=512, num_inference_steps=50, generator=generator)["sample"]
 
         for image in images:
             image.save(f"{save_dir}/{id}.png")
