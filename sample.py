@@ -1,9 +1,9 @@
 from diffusers.pipelines import StableDiffusionPipeline
 import torch
 
-sample_nums = 200
+sample_nums = 1000
 batch_size = 10
-prompt = "a photo of a man"
+prompt = "fanart of a bullywug"
 save_dir = "data/joetest/class"
 
 
